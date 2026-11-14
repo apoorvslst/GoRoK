@@ -1,15 +1,15 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import CommandCenter from './components/CommandCenter';
-import InspectorMockup from './components/InspectorMockup';
-import Capabilities from './components/Capabilities';
-import Ecosystem from './components/Ecosystem';
-import OnboardingTimeline from './components/OnboardingTimeline';
-import FAQ from './components/FAQ';
-import Philosophy from './components/Philosophy';
-import CallToAction from './components/CallToAction';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import CommandCenter from './components/CommandCenter.jsx';
+import InspectorMockup from './components/InspectorMockup.jsx';
+import Capabilities from './components/Capabilities.jsx';
+import Ecosystem from './components/Ecosystem.jsx';
+import OnboardingTimeline from './components/OnboardingTimeline.jsx';
+import FAQ from './components/FAQ.jsx';
+import Philosophy from './components/Philosophy.jsx';
+import CallToAction from './components/CallToAction.jsx';
+import Footer from './components/Footer.jsx';
 
 export default function App() {
   return (
