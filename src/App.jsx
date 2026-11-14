@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
+import ArchitectureFlowchart from './components/ArchitectureFlowchart.jsx';
 import CommandCenter from './components/CommandCenter.jsx';
 import InspectorMockup from './components/InspectorMockup.jsx';
 import Capabilities from './components/Capabilities.jsx';
@@ -18,35 +19,38 @@ export default function App() {
       <Navbar />
 
       <main>
-        {/* 2. Hero Section with Live Terminal Simulator */}
+        {/* 2. Hero Section with Realm Alliance Editorial Typography */}
         <Hero />
 
-        {/* 3. Interactive CLI Command Center */}
+        {/* 3. Interactive Architecture Flowchart */}
+        <ArchitectureFlowchart />
+
+        {/* 4. Interactive CLI Command Center */}
         <CommandCenter />
 
-        {/* 4. Live Traffic Inspector UI Mockup */}
+        {/* 5. Live Traffic Inspector UI Mockup */}
         <InspectorMockup />
 
-        {/* 5. Numbered Capabilities (8 Pillars) */}
+        {/* 6. Numbered Capabilities (8 Pillars) */}
         <Capabilities />
 
-        {/* 6. Ecosystem & Integration Section */}
+        {/* 7. Ecosystem & Integration Section */}
         <Ecosystem />
 
-        {/* 7. 4-Stage Onboarding Timeline */}
+        {/* 8. 4-Stage Onboarding Timeline */}
         <OnboardingTimeline />
 
-        {/* 8. Developer FAQ Accordion */}
+        {/* 9. Developer FAQ Accordion */}
         <FAQ />
 
-        {/* 9. Product Philosophy ("Why GoRok") */}
+        {/* 10. Product Philosophy ("Why GoRok") */}
         <Philosophy />
 
-        {/* 10. Dramatic Closing Call to Action */}
+        {/* 11. Closing Call to Action */}
         <CallToAction />
       </main>
 
-      {/* 11. Minimal Editorial Footer */}
+      {/* 12. Minimal Editorial Footer */}
       <Footer />
     </div>
   );
