@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #050505;
+    color: #F2F2EE;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar for realm-like dark editorial feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF4F00;
+  }
+}
+
+/* Background dot/grid textures */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+/* Hairline border utilities */
+.hairline-b {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.hairline-t {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.hairline-l {
+  border-left: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.hairline-r {
+  border-right: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.hairline-all {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
