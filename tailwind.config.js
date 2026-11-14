@@ -27,23 +27,21 @@ export default {
         }
       },
       fontFamily: {
-        editorial: ['"Chakra Petch"', '"Space Mono"', '"JetBrains Mono"', 'monospace'],
-        mono: ['"Chakra Petch"', '"JetBrains Mono"', '"Space Mono"', 'monospace'],
-        code: ['"JetBrains Mono"', 'monospace'],
+        mono: ['"JetBrains Mono"', '"Space Mono"', '"IBM Plex Mono"', 'monospace'],
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'flow-right': 'flowRight 2s linear infinite',
+        'glow-pulse': 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
-        flowRight: {
-          '0%': { transform: 'translateX(-100%)', opacity: '0' },
-          '50%': { opacity: '1' },
-          '100%': { transform: 'translateX(100%)', opacity: '0' },
+        glow: {
+          '0%': { boxShadow: '0 0 5px rgba(255, 79, 0, 0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(255, 79, 0, 0.6)' },
         }
       }
     },
   },
   plugins: [],
 }
+

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Terminal, ArrowRight, Check, Copy, Activity, ShieldCheck, Zap } from 'lucide-react';
-import { GITHUB_REPO_URL } from '../data/gorokContent.js';
+import { GITHUB_REPO_URL, siteMetadata } from '../data/gorokContent.js';
 
 function GithubIcon({ className = "w-4 h-4", ...props }) {
   return (
@@ -40,7 +40,7 @@ export default function Hero() {
         { id: Date.now(), ...randomReq }
       ]);
       setIsInjecting(false);
-    }, 400);
+    }, 450);
   };
 
   const copyHeroCommand = () => {
@@ -50,60 +50,74 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative pt-20 pb-24 md:pt-28 md:pb-36 overflow-hidden border-b border-white/10">
-      {/* Background subtle grid pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none -z-10" />
+    <section className="relative pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden border-b border-white/10">
+      {/* Background radial gradient glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gorok/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* Editorial Text Statement (Exact Realm Alliance Style from Image 3) */}
-        <div className="max-w-5xl mb-20">
-          <div className="font-editorial text-xs text-gorok tracking-[0.25em] uppercase font-bold mb-6">
-            // PROTOCOL SPECIFICATION · REVERSE INGRESS
-          </div>
-
-          <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight leading-[1.12] text-offwhite font-bold">
-            <span className="text-gorok">TUNNELING TAILORED FOR DEVELOPERS.</span>{' '}
-            YOU CAN'T HAVE FRAGILE SSH SESSIONS DROPPING UNDER TRAFFIC OR FIGHTING ROUTER NAT FIREWALLS. GOROK MULTIPLEXES SECURE OUTBOUND STREAMS DIRECTLY TO THE PUBLIC EDGE WITH ZERO FIREWALL HOLES AND ZERO CONFIGURATION.
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          {/* Main Headline */}
+          <h1 className="font-mono font-medium text-4xl sm:text-6xl lg:text-7xl tracking-tight uppercase text-offwhite leading-[0.98] mb-8">
+            EXPOSE ANY LOCAL PORT.<br />
+            <span className="text-gorok">ZERO FIREWALL HOLES.</span><br />
+            SINGLE GO BINARY.
           </h1>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-6 border-t border-white/10">
-            <div className="font-sans text-sm sm:text-base text-offwhite-secondary max-w-2xl leading-relaxed">
-              Expose <code className="text-offwhite font-mono px-1.5 py-0.5 bg-white/5 border border-white/10">localhost:3000</code> to the public internet through a multiplexed Yamux TLS pipe. Built with Go goroutines, circular memory buffers, and live request replay.
+          {/* Subtitle */}
+          <p className="font-sans text-base sm:text-lg text-offwhite-secondary max-w-2xl mx-auto leading-relaxed mb-10 font-normal">
+            GoRok establishes an authenticated, multiplexed tunnel from your local machine to the public edge. Share local servers, test live webhooks, and debug HTTP traffic without opening router ports or configuring corporate VPNs.
+          </p>
+
+          {/* Hero CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="#commands"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded bg-gorok text-black font-mono font-bold text-sm tracking-wide hover:bg-gorok-hover transition-all duration-150 shadow-lg shadow-gorok/10"
+            >
+              <span>Quickstart CLI</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded border border-white/20 bg-surface/80 text-offwhite font-mono text-sm hover:border-white/40 hover:text-white transition-all duration-150 backdrop-blur-sm"
+            >
+              <GithubIcon className="w-4 h-4 text-offwhite-secondary" />
+              <span>View GitHub Source</span>
+            </a>
+          </div>
+
+          {/* Architecture badges */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-offwhite-muted">
+            <div className="flex items-center gap-2">
+              <Zap className="w-4 h-4 text-gorok" />
+              <span>Yamux Stream Multiplexing</span>
             </div>
-
-            <div className="flex items-center gap-4 shrink-0 sm:ml-auto">
-              <a
-                href="#architecture"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gorok text-black font-editorial font-bold text-xs uppercase tracking-wider hover:bg-gorok-hover transition-colors"
-              >
-                <span>Architecture</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href={GITHUB_REPO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 border border-white/20 text-offwhite font-editorial font-bold text-xs uppercase tracking-wider hover:border-white/40 hover:text-white transition-colors"
-              >
-                <GithubIcon className="w-4 h-4 text-offwhite-secondary" />
-                <span>Source Code</span>
-              </a>
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-gorok" />
+              <span>Zero Firewall Holes</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Activity className="w-4 h-4 text-gorok" />
+              <span>Localhost:4040 Replay Inspector</span>
             </div>
           </div>
         </div>
 
         {/* Live Terminal Simulator */}
-        <div className="max-w-5xl mx-auto">
-          <div className="border border-white/15 bg-[#080808] shadow-2xl overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <div className="rounded-lg border border-white/15 bg-[#0B0B0B] shadow-2xl overflow-hidden">
             {/* Terminal Top Bar */}
-            <div className="h-10 px-4 bg-[#111111] border-b border-white/10 flex items-center justify-between">
+            <div className="h-10 px-4 bg-[#141414] border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 bg-white/20" />
-                <div className="w-2.5 h-2.5 bg-white/20" />
-                <div className="w-2.5 h-2.5 bg-gorok" />
-                <span className="ml-3 font-editorial text-xs text-offwhite-muted tracking-wider uppercase hidden sm:inline">
-                  GOROK SESSION // YAMUX:TCP-9000
+                <div className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/50" />
+                <div className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50" />
+                <div className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]/50" />
+                <span className="ml-3 font-mono text-xs text-offwhite-muted hidden sm:inline">
+                  gorok-session — yamux:tcp-9000
                 </span>
               </div>
 
@@ -111,14 +125,14 @@ export default function Hero() {
                 <button
                   onClick={simulateNewRequest}
                   disabled={isInjecting}
-                  className="px-2.5 py-1 text-[11px] font-editorial uppercase tracking-wider bg-white/5 border border-white/10 text-offwhite-secondary hover:text-white hover:border-white/30 transition-colors disabled:opacity-50"
+                  className="px-2.5 py-1 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-offwhite-secondary hover:text-white hover:border-white/20 transition-colors disabled:opacity-50"
                   title="Inject test traffic into the live tunnel simulator"
                 >
-                  {isInjecting ? 'Simulating...' : '+ Inject Stream'}
+                  {isInjecting ? 'Simulating...' : '+ Inject Request'}
                 </button>
                 <button
                   onClick={copyHeroCommand}
-                  className="flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-editorial uppercase tracking-wider bg-white/5 border border-white/10 text-offwhite-secondary hover:text-white hover:border-white/30 transition-colors"
+                  className="flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-offwhite-secondary hover:text-white hover:border-white/20 transition-colors"
                   title="Copy command"
                 >
                   {copied ? <Check className="w-3.5 h-3.5 text-gorok" /> : <Copy className="w-3.5 h-3.5" />}
@@ -128,54 +142,65 @@ export default function Hero() {
             </div>
 
             {/* Terminal Body */}
-            <div className="p-6 font-code text-xs sm:text-[13px] leading-relaxed text-offwhite overflow-x-auto space-y-4">
+            <div className="p-6 font-mono text-xs sm:text-[13px] leading-relaxed text-offwhite overflow-x-auto space-y-4">
               <div className="flex items-center gap-2 text-offwhite-secondary">
-                <span className="text-gorok font-bold select-none">$</span>
-                <span className="text-white font-medium">gorok http 3000 --subdomain rahul</span>
+                <span className="text-gorok font-bold">$</span>
+                <span className="text-white">gorok http 3000 --subdomain rahul</span>
               </div>
 
-              <div className="text-white/20 select-none">
-                --------------------------------------------------------------------------------
+              <div className="text-offwhite-muted select-none">
+                ============================================================
               </div>
 
               <div className="space-y-1 pl-2">
                 <div className="flex flex-col sm:flex-row sm:items-center">
-                  <span className="w-52 text-offwhite-secondary font-medium">GoRok Tunnel Active:</span>
-                  <span className="text-gorok font-semibold">https://rahul.gorok.dev</span>
+                  <span className="w-48 text-offwhite-secondary font-medium">GoRok Tunnel Active:</span>
+                  <a
+                    href="https://rahul.gorok.dev"
+                    onClick={(e) => e.preventDefault()}
+                    className="text-gorok hover:underline font-semibold"
+                  >
+                    https://rahul.gorok.dev
+                  </a>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center">
-                  <span className="w-52 text-offwhite-secondary font-medium">Forwarding to:</span>
+                  <span className="w-48 text-offwhite-secondary font-medium">Forwarding to:</span>
                   <span className="text-offwhite">http://localhost:3000</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center">
-                  <span className="w-52 text-offwhite-secondary font-medium">Control Session:</span>
+                  <span className="w-48 text-offwhite-secondary font-medium">Control Session:</span>
                   <span className="text-offwhite">Connected (Yamux :9000)</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center">
-                  <span className="w-52 text-offwhite-secondary font-medium">Local Inspector:</span>
-                  <span className="text-gorok">http://localhost:4040</span>
+                  <span className="w-48 text-offwhite-secondary font-medium">Local Inspector:</span>
+                  <a
+                    href="#inspector"
+                    className="text-gorok hover:underline"
+                  >
+                    http://localhost:4040
+                  </a>
                 </div>
               </div>
 
-              <div className="text-white/20 select-none">
-                --------------------------------------------------------------------------------
+              <div className="text-offwhite-muted select-none">
+                ============================================================
               </div>
 
               {/* Streaming request lines */}
-              <div className="space-y-2 pt-1 font-code">
+              <div className="space-y-2 pt-1 font-mono">
                 {liveStreamLogs.map((log) => (
                   <div
                     key={log.id}
                     className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs border-l-2 pl-3 py-0.5 transition-all duration-300"
                     style={{
-                      borderColor: log.statusType === 'success' ? '#22c55e' : '#FF4F00'
+                      borderColor: log.statusType === 'success' ? '#22c55e' : '#ef4444'
                     }}
                   >
-                    <span className={log.statusType === 'success' ? 'text-emerald-400 font-semibold' : 'text-gorok font-semibold'}>
+                    <span className={log.statusType === 'success' ? 'text-emerald-400 font-semibold' : 'text-red-400 font-semibold'}>
                       [{log.code}]
                     </span>
                     <span className="text-offwhite-secondary font-medium w-12">{log.method}</span>
-                    <span className="text-offwhite font-code">{log.path}</span>
+                    <span className="text-offwhite font-mono">{log.path}</span>
                     <span className="text-offwhite-muted ml-auto sm:ml-0">{log.latency}</span>
                     {log.in && (
                       <span className="text-offwhite-muted text-[11px] hidden sm:inline">
@@ -188,7 +213,7 @@ export default function Hero() {
                       </span>
                     )}
                     {log.note && (
-                      <span className="text-gorok/80 text-[11px] italic">
+                      <span className="text-red-400/80 text-[11px] italic">
                         {log.note}
                       </span>
                     )}
@@ -198,17 +223,17 @@ export default function Hero() {
             </div>
 
             {/* Bottom Status Bar */}
-            <div className="px-5 py-3 bg-[#0C0C0C] border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] font-editorial text-offwhite-muted gap-2 uppercase tracking-wider">
+            <div className="px-5 py-3 bg-[#0E0E0E] border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] font-mono text-offwhite-muted gap-2">
               <div className="flex items-center gap-2.5">
-                <span className="w-2 h-2 bg-emerald-400" />
-                <span className="text-offwhite font-bold">TUNNEL ONLINE</span>
-                <span className="opacity-30">/</span>
-                <span>LATENCY: 12MS</span>
-                <span className="opacity-30">/</span>
-                <span className="text-gorok">MULTIPLEXED TLS 1.3</span>
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="tracking-wider text-offwhite font-medium">STATUS: ONLINE</span>
+                <span className="opacity-40">·</span>
+                <span>LATENCY: 12ms</span>
+                <span className="opacity-40">·</span>
+                <span className="text-gorok">ALL STREAMS ENCRYPTED (TLS 1.3)</span>
               </div>
               <div className="text-offwhite-muted hidden sm:block">
-                PID: 88412 · RING BUFFER: 4.8MB
+                PID: 88412 · MEM: 4.8MB
               </div>
             </div>
           </div>

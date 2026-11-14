@@ -30,11 +30,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "ARCHITECTURE", href: "#architecture" },
     { name: "COMMANDS", href: "#commands" },
     { name: "INSPECTOR", href: "#inspector" },
     { name: "CAPABILITIES", href: "#capabilities" },
     { name: "ECOSYSTEM", href: "#ecosystem" },
+    { name: "TIMELINE", href: "#timeline" },
     { name: "FAQ", href: "#faq" },
   ];
 
@@ -43,12 +43,12 @@ export default function Navbar() {
       scrolled ? 'bg-void/90 backdrop-blur-md' : 'bg-void/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto h-full px-6 flex items-center justify-between">
-        {/* Brand Wordmark - Clean, direct, no generic version pills */}
+        {/* Brand Wordmark */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 bg-surface-elevated border border-white/20 flex items-center justify-center text-gorok transition-transform duration-200 group-hover:border-gorok/50">
-            <span className="font-editorial font-bold text-lg leading-none">G</span>
+          <div className="w-8 h-8 rounded bg-surface-elevated border border-white/15 flex items-center justify-center text-gorok transition-transform duration-200 group-hover:scale-105 group-hover:border-gorok/40">
+            <span className="font-mono font-bold text-lg leading-none tracking-tighter">G</span>
           </div>
-          <span className="font-editorial text-xl font-bold tracking-[0.14em] text-offwhite uppercase">
+          <span className="font-mono text-xl font-bold tracking-[0.1em] text-offwhite uppercase">
             GoRok
           </span>
         </a>
@@ -59,7 +59,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-editorial text-offwhite-secondary hover:text-gorok transition-colors tracking-widest uppercase"
+              className="text-xs font-mono text-offwhite-secondary hover:text-gorok transition-colors tracking-wider"
             >
               {link.name}
             </a>
@@ -72,7 +72,7 @@ export default function Navbar() {
             href={GITHUB_REPO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3.5 py-2 border border-white/15 bg-surface text-offwhite text-xs font-editorial tracking-wider hover:border-white/30 hover:text-white transition-all duration-150 uppercase"
+            className="flex items-center gap-2 px-3.5 py-2 rounded border border-white/15 bg-surface text-offwhite text-xs font-mono hover:border-white/30 hover:text-white transition-all duration-150"
             title="View GoRok Source Code"
           >
             <GithubIcon className="w-4 h-4 text-offwhite-secondary" />
@@ -81,17 +81,17 @@ export default function Navbar() {
 
           <a
             href="#commands"
-            className="flex items-center gap-2 px-4 py-2 bg-gorok text-black text-xs font-editorial font-bold tracking-wider hover:bg-gorok-hover transition-colors shadow-sm uppercase"
+            className="flex items-center gap-2 px-4 py-2 rounded bg-gorok text-black text-xs font-mono font-semibold tracking-wide hover:bg-gorok-hover transition-colors shadow-sm"
           >
             <Terminal className="w-4 h-4" />
-            <span>Quickstart</span>
+            <span>Quickstart CLI</span>
           </a>
         </div>
 
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 border border-white/15 text-offwhite hover:text-gorok hover:border-gorok/50 transition-colors"
+          className="lg:hidden p-2 rounded border border-white/15 text-offwhite hover:text-gorok hover:border-gorok/50 transition-colors"
           aria-label="Toggle mobile menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -107,7 +107,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-editorial text-lg tracking-wider text-offwhite-secondary hover:text-gorok transition-colors py-2 border-b border-white/5 uppercase"
+                className="font-mono text-lg tracking-wider text-offwhite-secondary hover:text-gorok transition-colors py-2 border-b border-white/5"
               >
                 {link.name}
               </a>
@@ -118,15 +118,15 @@ export default function Navbar() {
             <a
               href="#commands"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3.5 bg-gorok text-black text-center font-editorial font-bold text-sm tracking-wide hover:bg-gorok-hover transition-colors uppercase"
+              className="w-full py-3.5 rounded bg-gorok text-black text-center font-mono font-bold text-sm tracking-wide hover:bg-gorok-hover transition-colors"
             >
-              Quickstart →
+              Quickstart CLI →
             </a>
             <a
               href={GITHUB_REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 border border-white/20 text-offwhite text-center font-editorial text-sm hover:border-white/40 flex items-center justify-center gap-2 uppercase tracking-wider"
+              className="w-full py-3.5 rounded border border-white/20 text-offwhite text-center font-mono text-sm hover:border-white/40 flex items-center justify-center gap-2"
             >
               <GithubIcon className="w-4 h-4" />
               <span>View Source on GitHub</span>
