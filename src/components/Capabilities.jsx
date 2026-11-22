@@ -391,6 +391,29 @@ function renderVisualCard(type) {
         </div>
       );
 
+          case 'health-check':
+      return (
+        <div className="space-y-4 font-mono text-xs">
+          <div className="p-5 rounded-lg bg-[#070707] border border-white/10 space-y-4">
+            <div className="flex items-center justify-between text-[11px]">
+              <span className="text-offwhite-muted">HEARTBEAT MONITOR</span>
+              <span className="text-gorok">PING EVERY 10s</span>
+            </div>
+
+            <div className="p-3 rounded bg-surface border border-white/10 space-y-2 text-[11px]">
+              <div className="flex items-center gap-2 text-emerald-400 font-semibold">
+                <Activity className="w-3.5 h-3.5" />
+                <span>Tunnel healthy · last ping 8ms</span>
+              </div>
+              <div className="flex items-center gap-2 text-offwhite-secondary">
+                <RotateCcw className="w-3.5 h-3.5 text-gorok" />
+                <span>Auto-reconnect after 3 missed pings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+
     default:
       return null;
   }
