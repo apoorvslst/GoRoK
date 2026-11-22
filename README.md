@@ -6,7 +6,7 @@ Visually inspired by the dark editorial aesthetics of [realmalliance.com](https:
 
 ---
 
-## ⚡ Core Product Identity
+##  Core Product Identity
 
 GoRok is a lightweight reverse-tunneling service built in Go that securely exposes local servers (e.g. `localhost:3000`) to the public internet through an encrypted outbound connection—with zero router configuration, zero open inbound firewall ports, and zero complex VPNs.
 
@@ -15,7 +15,7 @@ GoRok is a lightweight reverse-tunneling service built in Go that securely expos
 
 ---
 
-## 🎨 Visual System & Architecture
+##  Visual System & Architecture
 
 - **Primary Background:** `#050505` (Deep void black)
 - **Surface Panels:** `#0E0E0E` and `#121212`
@@ -27,7 +27,7 @@ GoRok is a lightweight reverse-tunneling service built in Go that securely expos
 
 ---
 
-## 🚀 Key Sections Included
+##  Key Sections Included
 
 1. **Navigation Bar:** Wordmark, desktop section anchors, GitHub source link, mobile drawer.
 2. **Hero Section:** Monospace headline, live interactive terminal session simulator with dynamic request injection.
@@ -43,7 +43,7 @@ GoRok is a lightweight reverse-tunneling service built in Go that securely expos
 
 ---
 
-## 🛠 Local Development
+##  Local Development
 
 ```bash
 # Install dependencies
@@ -61,6 +61,6 @@ npm run preview
 
 ---
 
-## 📄 License
+##  License
 
 MIT © 2026 GoRok. Engineered for developers who need to know.
