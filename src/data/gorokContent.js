@@ -218,7 +218,15 @@ export const capabilities = [
     tags: ["privacy", "ring-buffer", "memory-safe"],
     visualType: "ring-buffer",
     detail: "O(1) pointer-head buffer overwrite ensures deterministic zero-leak memory footprint on developer machines."
-  }
+  },
+  {
+  number: '09',
+  title: 'Heartbeat Monitoring',
+  summary: 'Detects dead tunnels fast and reconnects automatically, so your public URL stays up.',
+  detail: 'Ping every 10s · Auto-reconnect after 3 missed pings',
+  tags: ['health', 'reconnect', 'reliability'],
+  visualType: 'health-check',
+}
 ];
 
 export const ecosystemTools = [
